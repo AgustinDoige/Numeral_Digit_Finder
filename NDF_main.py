@@ -35,6 +35,3 @@ with open("constant.txt",'r') as f:
 
 			if testing%1000000 == 0:
 				print("Testing {} millones.".format(int(testing/1000000)))
-
-			if testing == 1000000:
-				break
