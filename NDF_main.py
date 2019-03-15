@@ -29,6 +29,7 @@ with open("constant.txt",'r') as f:
 
 			if str(testing) == candidate:
 				print("Found!",testing)
+				g.write("{} found at {}.".format(testing))
 
 			testing += 1
 
