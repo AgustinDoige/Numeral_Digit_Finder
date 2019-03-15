@@ -12,7 +12,7 @@ print("Running...")
 
 with open("constant.txt",'r') as f:
 	with open("results.txt",'w') as g:
-		g.write("NDF Started about constant {} at {}".format(constant,datetime.datetime.utcnow()))
+		g.write("NDF Started about constant {} at {}\n".format(constant,datetime.datetime.utcnow()))
 		candidate = f.read(1)
 		while (candidate != '.'):  # This skips the numbers before the point and the point itself, so to get directly to the digits
 			candidate = f.read(1)
@@ -29,9 +29,12 @@ with open("constant.txt",'r') as f:
 
 			if str(testing) == candidate:
 				print("Found!",testing)
-				g.write("{} found at {}.".format(testing))
+				g.write("{} found at {}.\n".format(testing,datetime.datetime.utcnow()))
 
 			testing += 1
 
 			if testing%1000000 == 0:
 				print("Testing {} millones.".format(int(testing/1000000)))
+
+			if testing == 1000000:
+				break
